@@ -12,17 +12,17 @@ jobs:
     steps:
       - checkout  # Sprawdzenie repozytorium
       - run:
-          name: Install dependencies
+          name: Install pytest
           command: |
             python -m venv venv  # Tworzymy wirtualne środowisko
             . venv/bin/activate
-            pip install --upgrade pip
-            pip install -r requirements.txt  # Instalujemy zależności z requirements.txt
+            pip install --upgrade pip  # Uaktualniamy pip
+            pip install pytest  # Instalujemy pytest bezpośrednio
       - run:
           name: Run tests with pytest
           command: |
             . venv/bin/activate
-            pytest tests/test_calculator.py  # Uruchamiamy testy za pomocą pytest
+            pytest tests/test_calculator.py  # Uruchamiamy testy z pytest
 
 workflows:
   version: 2
