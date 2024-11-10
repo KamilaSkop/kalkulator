@@ -22,7 +22,7 @@ jobs:
           name: Run tests with pytest
           command: |
             . venv/bin/activate
-            pytest kalkulator/calculator/test_calculator.py  # Uruchamiamy testy z pytest
+            pytest calculator/test_calculator.py  # Uruchamiamy testy z pytest
 
 workflows:
   version: 2
