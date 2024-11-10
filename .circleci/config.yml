@@ -19,10 +19,10 @@ jobs:
             pip install --upgrade pip
             pip install -r requirements.txt  # Instalujemy zależności z requirements.txt
       - run:
-          name: Run tests
+          name: Run tests with pytest
           command: |
             . venv/bin/activate
-            python -m unittest discover -s tests -p "test_calculator.py"  # Uruchamiamy testy
+            pytest tests/test_calculator.py  # Uruchamiamy testy za pomocą pytest
 
 workflows:
   version: 2
